@@ -52,7 +52,8 @@ class GuiApp(BaseApp):
         
         ctk.CTkCheckBox(master=self._login_frame,
                     text='Выбрать пользователя из списка',
-                    command=self._toggle_user_choice_visability).pack(pady=12,padx=10)
+                    command=self._toggle_user_choice_visability,
+                    state=NORMAL if self._users else DISABLED).pack(pady=12,padx=10)
 
         self._main_frame = ctk.CTkFrame(self._main_window)
         self._tabview = ctk.CTkTabview(self._main_frame, 750, 350)
