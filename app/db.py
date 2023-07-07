@@ -2,8 +2,10 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.sql import text
 from app.entities import Base, User
+from app.singleton import singleton
 
-class DBTool:
+@singleton
+class DBTool():
     """Класс, реализующий взаимодействие с БД."""
     __slots__ = ('_session')
 
